@@ -1,0 +1,4 @@
+mongoexport -d aluno -u aluno -p aluno -c megasena --sort '{concurso:1}' | sed '/"_id":/s/"_id":[^,]*,//' > megasena.json
+
+
+mongoimport -d aluno -u aluno -p aluno -c megasena megasena.json
